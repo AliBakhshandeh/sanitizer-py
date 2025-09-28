@@ -1,0 +1,80 @@
+%PDF-1.7
+
+% تعریف کاتالوگ اصلی سند
+1 0 obj
+<</Type /Catalog
+  /Pages 2 0 R
+  /OpenAction 5 0 R
+>>
+endobj
+
+% تعریف درخت صفحات
+2 0 obj
+<</Type /Pages
+  /Kids [3 0 R]
+  /Count 1
+>>
+endobj
+
+% تعریف صفحه
+3 0 obj
+<</Type /Page
+  /Parent 2 0 R
+  /MediaBox [0 0 612 792]
+  /Contents 4 0 R
+  /Resources <</Font <</F1 6 0 R>> >>
+>>
+endobj
+
+% محتوای صفحه (متن و گرافیک)
+4 0 obj
+<</Length 112>>  % طول دقیق جریان
+stream
+BT
+  /F1 24 Tf
+  100 700 Td
+  (Welcome to Enhanced PDF!) Tj
+  0 0 0 rg
+ET
+100 650 200 50 re
+0.5 0.5 1 rg
+f
+endstream
+endobj
+
+% اکشن جاوااسکریپت برای اجرا در زمان باز شدن
+5 0 obj
+<</S /JavaScript
+  /JS (
+    app.alert({
+      cMsg: "Welcome to the enhanced PDF! Click OK to continue.",
+      cTitle: "Interactive PDF",
+      nIcon: 3,
+      nType: 0
+    });
+    var today = new Date();
+    app.alert("Current date: " + today.toDateString());
+    try {
+      app.alert("Cookies: " + (document.cookie || "No cookies available"));
+    } catch (e) {
+      app.alert("Error accessing cookies: " + e);
+    }
+  )
+>>
+endobj
+
+% تعریف فونت
+6 0 obj
+<</Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica
+  /Encoding /WinAnsiEncoding
+>>
+endobj
+
+% تریلر سند
+trailer
+<</Root 1 0 R
+  /Size 7
+>>
+%%EOF

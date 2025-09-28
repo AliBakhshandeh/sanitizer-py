@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  sanitizer:
+    build: .
+    container_name: sanitizer_service
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./app/logs:/app/logs
+    environment:
+      - LOG_LEVEL=INFO
+    restart: unless-stopped
