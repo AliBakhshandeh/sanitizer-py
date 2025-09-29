@@ -11,4 +11,5 @@ services:
       - ./app/logs:/app/logs
     environment:
       - LOG_LEVEL=INFO
+      - ENV=Development
     restart: unless-stopped

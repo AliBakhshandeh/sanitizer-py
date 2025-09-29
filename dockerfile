@@ -4,6 +4,8 @@ FROM python:3.11-slim
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+ENV ENV=Production 
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     ghostscript \
@@ -27,3 +29,9 @@ RUN mkdir -p uploads/clean uploads/quarantine
 EXPOSE 8000
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+# Production (default)
+#docker run -p 8000:8000 myapp
+
+# Development
+#docker run -e ENV=Development -p 8000:8000 myapp
